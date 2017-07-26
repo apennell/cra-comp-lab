@@ -1,3 +1,29 @@
+This app is test integration with components from [Annie's Component Lab](https://github.com/apennell/annies-component-lab).
+
+To use the component lab elements, in `package.json` add (if not already in there):
+```js
+...
+"dependencies": {
+"annies-component-lab": "https://github.com/apennell/annies-component-lab.git#master"
+},
+...
+```
+
+If there have been updates made to component lab, you need to fully remove the package from `node_modules` (`rm -rf node_modules/annies-component-lab`) and then run `npm install` again to get the new version.
+
+In the the js component file that you want to add the lab component to (in this case, Button), add `import { Button } from 'annies-component-lab';` to the top.
+
+Add the Button component to the file: 
+```js
+<Button onClick={(e) => alert('You clicked the default button!', e.target)}>
+  Secondary button
+</Button>
+```
+
+Run `npm start` to view it in the browser.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
